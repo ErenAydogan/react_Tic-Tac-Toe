@@ -1,21 +1,9 @@
-const initialGameBoard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null]
-]
 
 
 const GameBoard = ( props ) =>
 {
 
-    let gameBoard = initialGameBoard;
 
-    for (const turn of props.turns)
-    {
-        const { square , player } = turn;
-        const { row, col } = square;
-        gameBoard[row][col] = player
-    }
 /*     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     const handleSelectSquare = (rowIndex, colIndex) =>
@@ -32,7 +20,7 @@ const GameBoard = ( props ) =>
         <>
         <ol id="game-board">
             {
-                gameBoard.map((row, rowIndex) => (
+                props.board.map((row, rowIndex) => (
                     <li key={rowIndex}>
                         <ol>
                             {
